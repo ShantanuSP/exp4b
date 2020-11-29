@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <style>
+    * {
+
+margin: 0;
+
+padding: 0;
+
+}
+
+body {
+    
+
+font-family: "Open Sans";
+
+font-size: 20px;
+
+}
+        .reset{
+            padding-left: 16px;
+            padding-right: 16px;
+            margin-left: 16px;
+            font-family: sans-serif;
+            background-color: black;
+            color: white;
+        }
+        .submit{
+             padding-left: 16px;
+            padding-right: 16px;
+            
+            font-family: sans-serif;
+            background-color: black;
+            color: white;
+        }
+        }
+
+.container {
+
+width: 1000px;
+
+margin: 25px auto;
+
+}
+
+form {
+
+padding: 20px;
+
+background: teal;
+
+color: #fff;
+
+border-radius: 4px;
+
+font-size: 20px;
+
+}
+        #email{
+            margin-right: 30px;
+        }
+
+ 
+
+form .error {
+
+color: #ff0000;
+
+border: 1px solid white;
+
+font-size: 14px;
+
+padding: 5px;
+
+margin-left: 100px;
+
+ 
+
+}
+    </style>
+
+<link rel="stylesheet" href="P4b.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+
+<script>
+
+$(function() {
+
+$("form[name='registration']").validate({
+
+rules: {
+
+firstname: { required: true },
+
+lastname: { required: true },
+
+email: {
+
+required: true,
+
+email: true
+
+},
+
+password: {
+
+required: true,
+
+minlength: 5
+
+}
+
+},
+
+messages: {
+
+firstname: "Please enter your firstname",
+
+lastname: "Please enter your lastname",
+
+password: {
+
+required: "Please provide a password",
+
+minlength: "Your password must be at least 5 characters long"
+
+},
+
+email: "Please enter a valid email address"
+
+},
+
+submitHandler: function(form) {
+
+form.submit();
+
+}
+
+});
+
+});
+
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2><center>Registration Form</center></h2>
+
+<form action="" name="registration">
+
+<label for="firstname">First Name :</label>
+
+<input type="text" name="firstname" id="firstname" /><br><br>
+
+<label for="lastname">Last Name :</label>
+
+<input type="text" name="lastname" id="lastname" /><br><br>
+
+<label for="email" >Email :</label>
+
+<input type="email" name="email" id="email" /><br><br>
+
+<label for="password">Password :</label>
+
+<input type="password" name="password" id="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;"/><br><br>
+
+<button type="submit" class="submit">Register</button>
+<button type="reset" class="reset"> reset</button>
+</form>
+
+</div>
+
+</body>
+
+</html>
